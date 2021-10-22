@@ -32,7 +32,7 @@ const PrivateRoute = ({ children }) => {
           console.error("error al obtener datos de usuario: ", error);
           setLoadingUserInfo(false);
           logout({
-            returnTo: "https://guarded-cliffs-20567.herokuapp.com/goto",
+            returnTo: "https://murmuring-sierra-89804.herokuapp.com/goto",
           });
         }
       );
