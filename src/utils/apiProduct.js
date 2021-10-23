@@ -1,10 +1,13 @@
 import axios from "axios";
 import GetToken from "./getToken";
 
+// const baseURL = "http://localhost:5000/"
+const baseURL = "https://fierce-ridge-23269.herokuapp.com/";
+
 export const getProducts = async (successCallback, errorCallback) => {
   const options = {
     method: "GET",
-    url: "https://fierce-ridge-23269.herokuapp.com/productos/",
+    url: `${baseURL}productos/`,
     headers: { Authorization: GetToken(),}
   };
   await axios.request(options).then(successCallback).catch(errorCallback);
@@ -13,7 +16,7 @@ export const getProducts = async (successCallback, errorCallback) => {
 export const addProduct = async (data, successCallback, errorCallback) => {
   const options = {
     method: "POST",
-    url: "https://fierce-ridge-23269.herokuapp.com/productos/",
+    url: `${baseURL}productos/`,
     headers: { "Content-Type": "application/json", Authorization: GetToken(), },
     data,
   };
@@ -28,7 +31,7 @@ export const updateProduct = async (
 ) => {
   const options = {
     method: "PATCH",
-    url: `https://fierce-ridge-23269.herokuapp.com/productos/${id}/`,
+    url: `${baseURL}productos/${id}/`,
     headers: { "Content-Type": "application/json" , Authorization: GetToken(),},
     data,
   };
@@ -38,7 +41,7 @@ export const updateProduct = async (
 export const deleteProduct = async (id, successCallback, errorCallback) => {
   const options = {
     method: "DELETE",
-    url: `https://fierce-ridge-23269.herokuapp.com/productos/${id}/`,
+    url: `${baseURL}productos/${id}/`,
     headers: { "Content-Type": "application/json", Authorization: GetToken(), },
   };
   await axios.request(options).then(successCallback).catch(errorCallback);

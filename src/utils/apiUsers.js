@@ -1,10 +1,13 @@
 import axios from "axios";
 import GetToken from "./getToken";
 
+// const baseURL = "http://localhost:5000/"
+const baseURL = "https://fierce-ridge-23269.herokuapp.com/"
+
 export const getUsers = async (successCallback, errorCallback) => {
   const options = {
     method: "GET",
-    url: "https://fierce-ridge-23269.herokuapp.com/usuarios",
+    url: `${baseURL}usuarios`,
     headers: { Authorization: GetToken() },
   };
 
@@ -14,7 +17,7 @@ export const getUsers = async (successCallback, errorCallback) => {
 export const getUserData = async (successCallback, errorCallback) => {
   const options = {
     method: "GET",
-    url: "https://fierce-ridge-23269.herokuapp.com/usuarios/self",
+    url: `${baseURL}usuarios/self`,
     headers: { Authorization: GetToken() },
   };
 
@@ -24,7 +27,7 @@ export const getUserData = async (successCallback, errorCallback) => {
 export const updateUser = async (id, data, successCallback, errorCallback) => {
   const options = {
     method: "PATCH",
-    url: `https://fierce-ridge-23269.herokuapp.com/usuarios/${id}/`,
+    url: `${baseURL}usuarios/${id}/`,
     headers: { "Content-Type": "application/json", Authorization: GetToken() },
     data,
   };
@@ -34,7 +37,7 @@ export const updateUser = async (id, data, successCallback, errorCallback) => {
 export const deleteUser = async (id, successCallback, errorCallback) => {
   const options = {
     method: "DELETE",
-    url: `https://fierce-ridge-23269.herokuapp.com/usuarios/${id}/`,
+    url: `${baseURL}usuarios/${id}/`,
     headers: { "Content-Type": "application/json", Authorization: GetToken() },
   };
 
