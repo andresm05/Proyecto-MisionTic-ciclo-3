@@ -2,7 +2,7 @@ import axios from "axios";
 import GetToken from "./getToken";
 
 // const baseURL = "http://localhost:5000"
-const baseURL = "https://fierce-ridge-23269.herokuapp.com";
+const baseURL = "https://aqueous-garden-65379.herokuapp.com";
 
 export const getSales = async (successCallback, errorCallback) => {
   const options = {
